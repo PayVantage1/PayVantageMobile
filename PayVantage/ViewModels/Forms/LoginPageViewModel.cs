@@ -1,4 +1,7 @@
-﻿using System.Threading.Tasks;
+﻿using PayVantage.Views.Dashboard;
+using PayVantage.Views.Forms;
+using PayVantage.Views.Profile;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -26,7 +29,7 @@ namespace PayVantage.ViewModels.Forms
             this.LoginCommand = new Command(this.LoginClicked);
             this.SignUpCommand = new Command(this.SignUpClicked);
             this.ForgotPasswordCommand = new Command(this.ForgotPasswordClicked);
-            this.SocialMediaLoginCommand = new Command(this.SocialLoggedIn);
+            //this.SocialMediaLoginCommand = new Command(this.SocialLoggedIn);
         }
 
         #endregion
@@ -77,7 +80,7 @@ namespace PayVantage.ViewModels.Forms
         /// <summary>
         /// Gets or sets the command that is executed when the social media login button is clicked.
         /// </summary>
-        public Command SocialMediaLoginCommand { get; set; }
+        //public Command SocialMediaLoginCommand { get; set; }
 
         #endregion
 
@@ -87,18 +90,19 @@ namespace PayVantage.ViewModels.Forms
         /// Invoked when the Log In button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void LoginClicked(object obj)
+        private async void LoginClicked(object obj)
         {
-            // Do something
+            NavHelper.InserPageBefore(new MasterPage());
+            await NavHelper.PopAsync();
         }
 
         /// <summary>
         /// Invoked when the Sign Up button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void SignUpClicked(object obj)
+        private async void SignUpClicked(object obj)
         {
-            // Do something
+            await NavHelper.PushAsync(new SignUpPage());
         }
 
         /// <summary>
@@ -107,20 +111,21 @@ namespace PayVantage.ViewModels.Forms
         /// <param name="obj">The Object</param>
         private async void ForgotPasswordClicked(object obj)
         {
-            var label = obj as Label;
-            label.BackgroundColor = Color.FromHex("#70FFFFFF");
-            await Task.Delay(100);
-            label.BackgroundColor = Color.Transparent;
+            //var label = obj as Label;
+            //label.BackgroundColor = Color.FromHex("#70FFFFFF");
+            //await Task.Delay(100);
+            //label.BackgroundColor = Color.Transparent;
+            await NavHelper.PushAsync(new ForgotPasswordPage());
         }
 
         /// <summary>
         /// Invoked when social media login button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void SocialLoggedIn(object obj)
-        {
-            // Do something
-        }
+        //private void SocialLoggedIn(object obj)
+        //{
+        //    // Do something
+        //}
 
         #endregion
     }

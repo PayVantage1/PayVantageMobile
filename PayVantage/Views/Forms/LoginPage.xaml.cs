@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms.Internals;
+﻿using PayVantage.ViewModels.Forms;
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 namespace PayVantage.Views.Forms

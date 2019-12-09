@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using PayVantage.Views.Forms;
+using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
 namespace PayVantage.ViewModels.Forms
@@ -122,9 +123,9 @@ namespace PayVantage.ViewModels.Forms
         /// Invoked when the Log in button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void LoginClicked(object obj)
+        private async void LoginClicked(object obj)
         {
-            // Do something
+            await NavHelper.PopAsync();
         }
 
         /// <summary>

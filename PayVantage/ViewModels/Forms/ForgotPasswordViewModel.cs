@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using PayVantage.Views.Forms;
+using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
 namespace PayVantage.ViewModels.Forms
@@ -51,9 +52,10 @@ namespace PayVantage.ViewModels.Forms
         /// Invoked when the Sign Up button is clicked.
         /// </summary>
         /// <param name="obj">The Object</param>
-        private void SignUpClicked(object obj)
+        private async void SignUpClicked(object obj)
         {
-            // Do something
+            await NavHelper.PushAsync(new SignUpPage());        //goto signup page
+            NavHelper.RemovePage();                 //remove previous page
         }
 
         #endregion

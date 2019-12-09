@@ -14,7 +14,7 @@ namespace PayVantage
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTc5NTY2QDMxMzcyZTMzMmUzMG5Sd0tkNEptcHRTUE8xRHFOdmxDdTJRSXRmWHd4a2EwZCtrZExSN0dDU1U9");
             InitializeComponent();
 
-            MainPage = new LoginPage();
+            MainPage = new NavigationPage(new LoginPage());
         }
 
         protected override void OnStart()
